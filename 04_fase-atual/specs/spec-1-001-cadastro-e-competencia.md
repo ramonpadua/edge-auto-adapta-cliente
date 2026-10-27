@@ -65,11 +65,13 @@ Cliente, entidade empregadora/faturamento, projeto/comprador, planta (Anchieta, 
 |---|---|---|
 | Cadastrar clientes, contratos e plantas com regras e tetos configuráveis | CA-1-001/002/003 | 1 |
 | Abrir a competência do mês com lista de colaboradores e bloqueio de liberação | CA-1-004/005 | 2 |
-| Configurar acesso e gestão de contas de usuários | CA-1-006 (emenda) | 2 |
+| Configurar acesso e gestão de contas de usuários (após a task 2) | CA-1-025 (emenda) | 2 |
 
 ## Emendas
 - **E-2710-01 (27/10/2026, pedido do consultor Ramon Pádua)**: criação de contas sai do login público e passa para a página de gestão administrativa restrita. Botão "Criar conta" removido do login; criação de contas fica na página administrativa, restrita por controle no servidor (além de ocultar a UI) e com registro de auditoria (quem criou/quando). Contas existentes preservadas sem alteração. Emenda documental: nenhuma implementação de app nesta etapa.
-- **Pergunta embutida (I-11, na task)**: quais pessoas/perfis poderão criar contas — não presumir que todos serão administradores.
-- **CA-1-006 (emenda)**: login não exibe botão "Criar conta"; criação de contas só ocorre na página de gestão administrativa restrita, com permissão verificada no servidor e auditoria (quem/quando); contas existentes permanecem válidas. Teste humano: permitido (exercer a prova no preview).
+- **Pergunta obrigatória (I-11, a responder por Bruno ANTES de definir a permissão): quais pessoas e perfis poderão criar contas — a política de acesso não é definida enquanto essa resposta não existir; não presumir que todos serão administradores.** A permissão de criação de contas não é definida antes dessa resposta; até lá a página administrativa fica restrita ao perfil já existente que o Bruno indicar, sem ampliar acesso.
+- **CA-1-025 (emenda)**: login não exibe botão "Criar conta"; criação de contas só ocorre na página de gestão administrativa restrita, com permissão verificada no servidor e auditoria (quem/quando); contas existentes permanecem válidas. Teste humano: permitido (exercer a prova no preview).
 - **Prova negativa (emenda)**: tentativa de criar conta fora da página restrita (ou sem permissão no servidor) é recusada; contas existentes continuam autenticando.
-- **Critérios CA-1-001..005 e provas da SPEC permanecem inalterados.**
+- **Dependência**: a task 9 é inserida na Jornada após a task 2 e só começa com as tasks 1 e 2 concluídas e aceitas (T1 e T2).
+- **Prazo**: a combinar com o Bruno na liberação (não fixado nesta emenda).
+- **Critérios CA-1-001..005 e provas da SPEC permanecem inalterados; CA-1-006 continua pertencendo à SPEC-1-002 (importação de ponto).**
