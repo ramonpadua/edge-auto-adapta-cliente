@@ -1,6 +1,6 @@
 # STATUS — Projeto EDGE AUTO (Medição, Faturamento e Cobrança)
 
-**Etapa atual:** Fase 1 — task 1 implementada em Skip v0.0.3; aguardando teste humano no preview
+**Etapa atual:** Fase 1 — task 1 implementada em Skip v0.0.3; aguardando teste humano no preview · Emenda documental 27/10: task 9 de gestão de contas/criação de usuários incluída na leva 2
 **Champion:** Bruno (CEO) · **Construção:** Skip (GoSkip + SkipCloud)
 
 | Etapa | Estado |
@@ -16,6 +16,7 @@
 
 1. Bruno entra no preview autenticado e valida as provas de CA-1-001/002/003 descritas no gate. O agente não tem credencial de teste confirmada; não fez login nem gravou cadastros via UI.
 2. Só depois da aprovação explícita do teste humano, concluir a task 1 e atualizar o avanço da fase.
+3. Emenda documental 27/10: task 9 (gestão de contas/criação de usuários) entra na leva 2, após o aceite da task 1. Nenhuma implementação de app nesta emenda; Bruno responde na task 9 quais pessoas/perfis poderão criar contas.
 
 ## Limites
 

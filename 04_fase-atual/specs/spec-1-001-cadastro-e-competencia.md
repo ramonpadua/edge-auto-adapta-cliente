@@ -65,6 +65,11 @@ Cliente, entidade empregadora/faturamento, projeto/comprador, planta (Anchieta, 
 |---|---|---|
 | Cadastrar clientes, contratos e plantas com regras e tetos configuráveis | CA-1-001/002/003 | 1 |
 | Abrir a competência do mês com lista de colaboradores e bloqueio de liberação | CA-1-004/005 | 2 |
+| Configurar acesso e gestão de contas de usuários | CA-1-006 (emenda) | 2 |
 
 ## Emendas
-(nenhuma)
+- **E-2710-01 (27/10/2026, pedido do consultor Ramon Pádua)**: criação de contas sai do login público e passa para a página de gestão administrativa restrita. Botão "Criar conta" removido do login; criação de contas fica na página administrativa, restrita por controle no servidor (além de ocultar a UI) e com registro de auditoria (quem criou/quando). Contas existentes preservadas sem alteração. Emenda documental: nenhuma implementação de app nesta etapa.
+- **Pergunta embutida (I-11, na task)**: quais pessoas/perfis poderão criar contas — não presumir que todos serão administradores.
+- **CA-1-006 (emenda)**: login não exibe botão "Criar conta"; criação de contas só ocorre na página de gestão administrativa restrita, com permissão verificada no servidor e auditoria (quem/quando); contas existentes permanecem válidas. Teste humano: permitido (exercer a prova no preview).
+- **Prova negativa (emenda)**: tentativa de criar conta fora da página restrita (ou sem permissão no servidor) é recusada; contas existentes continuam autenticando.
+- **Critérios CA-1-001..005 e provas da SPEC permanecem inalterados.**
