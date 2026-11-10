@@ -15,7 +15,7 @@
 git submodule update --init --recursive
 ```
 
-O submódulo fixa uma versão, fixa o commit `5179d0b`, não acompanha alterações automaticamente. Antes de avaliar atualidade, conferir o remoto sem trocar o ponteiro:
+O submódulo fixa o commit `5179d0b`, não acompanha alterações automaticamente. Antes de avaliar atualidade, conferir o remoto sem trocar o ponteiro:
 
 ```bash
 git -C 07-sistemas/Acompanhamento-RH-e-Financeiro fetch origin
