@@ -2,7 +2,7 @@
 
 - **Fase**: F1 · **Capacidades**: C5, C6 · **Risco**: obrigatório (dado pessoal, decisão humana preservada)
 - **Ambiente**: Skip (GoSkip + SkipCloud) — regra geral do consultor (22/09/2026)
-- **Degrau da solução**: é o coração da F1 — substitui a conferência manual linha a linha (espelho PDF × reporte × planilha) por comparação automática com exceções; elimina o trabalho de transcrição e confronto descrito no as-is.
+- **Degrau da solução**: é o coração da F1 — substitui a conferência manual linha a linha (espelho PDF × reporte × planilha) por comparação automática com exceções; elimina o trabalho de transcrição e confronto descrito no as-is (02:43–04:05 da `[REUNIÃO MACHADO]`).
 
 ## Contexto
 - **Estado atual**: financeiro recebe reporte semanal por e-mail e confronta manualmente com espelhos e planilha; correções ficam em versões de arquivo sem motivo.
@@ -52,7 +52,7 @@ Marcações diárias (4/dia + justificativas), ajustes pendentes, H.T./H.E.1/H.E
 - Superfícies: motor de comparação; painel de status por colaborador; fila de ajustes; fila de divergências; histórico de versões.
 - Fixtures: 10 colaboradores sintéticos com os 4 cenários acima; reportes e planilhas sintéticas.
 - Insumos embutidos na task: I-08 (1–2 vídeos curtos dos processos faltantes — Meire/Renata; "envie um vídeo de cada processo antes de detalharmos as automações").
-- **Ponto de parada**: se I-08 não vier, o desenho avança no declarado (escopo) e ajusta depois; nunca modelar processo não demonstrado como fato. Sem I-07, a comparação externa roda contra fixture.
+- **Ponto de parada**: se I-08 não vier, o desenho avança no declarado (escopo §3/§7) e ajusta depois; nunca modelar processo não demonstrado como fato. Sem I-07, a comparação externa roda contra fixture.
 
 ## Checklist de aceite
 - [ ] CA-1-012..017 provados em fixture
@@ -61,10 +61,16 @@ Marcações diárias (4/dia + justificativas), ajustes pendentes, H.T./H.E.1/H.E
 - [ ] Teste humano do RH/Medição e do Financeiro registrado
 
 ## Tasks vinculadas
-| Task (fase.md) | Critérios | Leva |
-|---|---|---|
-| Conciliar ponto, reporte e planilha do cliente com status por colaborador | CA-1-012/016 | 4 |
-| Conduzir ajustes de ponto e divergências com decisão humana e histórico | CA-1-013/014/015/017 | 5 |
+
+| ID | Tarefa | Critérios | Dependências |
+|---|---|---|---|
+| 195a6547-bd37-442a-b22a-0dd541b44bfd | Comparar as horas e mostrar quem precisa de conferência | CA-1-012, CA-1-016 | T3, T4 |
+| f367ac8b-08f6-4e3e-a58e-22287bebb06a | Resolver diferenças com aprovação e histórico | CA-1-013, CA-1-014, CA-1-015, CA-1-017 | T5 |
 
 ## Emendas
 (nenhuma)
+
+
+## Orientação de execução — revisão de 10/11/2026
+
+Esta revisão não altera critérios, fórmulas, limites ou o resultado contratado. O código do sistema disponível foi lido no commit 5179d0b, v0.0.7; não foi testado no ambiente do cliente. O estado e o teste humano não se presumem por existir código. Ler os roteiros correspondentes em `04_fase-atual/fase.md` (ou `00-Tasks_Gerais.md` no Plano). Reaproveitar a base, conferir a versão atual e corrigir apenas lacunas. Maestro executa; Bruno/time testam e aprovam. Explicar o que existe, o que falta, por que importa e cada clique com resultado esperado; avisar “olha o Skip agora”. Sem jargão nas interações. Não concluir sem evidência e aceite explícito. Uma tarefa por vez dentro da F1 liberada, sem autorização do consultor por tarefa. Testes técnicos em ambiente próprio isolado e dados fictícios; não acessar banco do cliente nem usar produção. Não alterar campos sensíveis, permissões ou valores por suposição.

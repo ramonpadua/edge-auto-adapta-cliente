@@ -2,7 +2,7 @@
 
 - **Fase**: F1 · **Capacidades**: C7 (parcial), C11 (v1), C13 (mínima) · **Risco**: obrigatório (dado pessoal, valor financeiro)
 - **Ambiente**: Skip (GoSkip + SkipCloud) — regra geral do consultor (22/09/2026)
-- **Degrau da solução**: entrega palpável da F1 — o **relatório comparativo ponto × planilha do cliente** (valor visível na 1ª consultoria e argumento do rito/SLA) — e fecha a base de medição do ciclo (baseline + métrica), com o cálculo de faturáveis protegido por fail-closed.
+- **Degrau da solução**: entrega palpável da F1 — o **relatório comparativo ponto × planilha do cliente** (ID-02, valor visível na 1ª consultoria e argumento do rito/SLA) — e fecha a base de medição do ciclo (baseline + métrica), com o cálculo de faturáveis protegido por fail-closed.
 
 ## Contexto
 - **Estado atual**: horas faturáveis calculadas à mão em planilha (H.T., H.E.1 75%, H.E.2 100%, noturno, sáb/dom/fer), com teto contratual em conflito e sem baseline medido.
@@ -61,10 +61,18 @@ Regra contratual por cliente/planta/vigência (H.E.1 %, H.E.2 %, adicional notur
 - [ ] Teste humano do Financeiro registrado
 
 ## Tasks vinculadas
-| Task (fase.md) | Critérios | Leva |
-|---|---|---|
-| Calcular horas faturáveis com regra por cliente e fail-closed de teto | CA-1-018/019/022/023/024 | 5 |
-| Emitir o relatório comparativo e registrar o baseline da medição | CA-1-020/021 | 6 |
+
+| ID | Tarefa | Critérios | Dependências |
+|---|---|---|---|
+| 630704b0-7141-45e2-9462-84d0737946dd | Conferir as horas que podem entrar na cobrança | CA-1-018, CA-1-019, CA-1-022, CA-1-023, CA-1-024 | T5 |
+| 01e77682-eb47-41a0-ad2a-0a589c5abec0 | Gerar o relatório da conferência e medir o tempo de trabalho | CA-1-020, CA-1-021 | T6, T7 |
 
 ## Emendas
 (nenhuma)
+
+
+## Orientação de execução — revisão de 10/11/2026
+
+Esta revisão não altera critérios, fórmulas, limites ou o resultado contratado. O código do sistema disponível foi lido no commit 5179d0b, v0.0.7; não foi testado no ambiente do cliente. O estado e o teste humano não se presumem por existir código. Ler os roteiros correspondentes em `04_fase-atual/fase.md` (ou `00-Tasks_Gerais.md` no Plano). Reaproveitar a base, conferir a versão atual e corrigir apenas lacunas. Maestro executa; Bruno/time testam e aprovam. Explicar o que existe, o que falta, por que importa e cada clique com resultado esperado; avisar “olha o Skip agora”. Sem jargão nas interações. Não concluir sem evidência e aceite explícito. Uma tarefa por vez dentro da F1 liberada, sem autorização do consultor por tarefa. Testes técnicos em ambiente próprio isolado e dados fictícios; não acessar banco do cliente nem usar produção. Não alterar campos sensíveis, permissões ou valores por suposição.
+
+`time_records_compute.js` calcula tempo de presença; `registry_contract_rules_check.js` verifica teto e declara que o cálculo completo pertence à task correspondente. Não usar esses resultados nem o CSV de Cobranças como prova de motor faturável ou de relatório comparativo prontos.

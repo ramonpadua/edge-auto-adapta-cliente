@@ -24,3 +24,11 @@
 - `npm test` do projeto é um placeholder sem casos automatizados reais.
 - Dados de trabalho devem continuar sintéticos até aprovação da política de dados.
 - O sistema do cliente (repo próprio, v0.0.7) já tem páginas de ponto, RH, financeiro e admin — consultar o submódulo `07-sistemas/Acompanhamento-RH-e-Financeiro` antes de construir; evoluir, nunca reconstruir.
+
+## Estado vigente — revisão das tarefas em 10/11/2026
+
+Fase 1 LIBERADA pelo consultor Ramon neste chat. 9 tarefas, nenhuma encerrada nesta revisão. Maestro executa; Bruno/time fazem o teste e aprovam cada tarefa. Não exigir autorização do consultor por tarefa. Escopo novo ou mudança de fase volta ao consultor.
+
+Foi conferido o remoto do sistema em 10/11: commit 5179d0b, v0.0.7, igual ao gitlink existente. Leitura de código, sem acesso ao banco, app ou produção. Contratos, Painel RH, ponto, Cobranças e Usuários devem ser aproveitados. Presença de tela não comprova competência mensal, importação, conciliação, motor faturável, relatório comparativo nem proteção completa de contas. A T1 precisa conferir/corrigir o caminho de cadastro com histórico opcional antes do aceite da versão atual; o QA v0.0.3 não comprova v0.0.7.
+
+Todas as tarefas foram reescritas em linguagem simples: o que existe, o que falta, por que importa, informação necessária, teste humano em passos com resultado esperado, evidência e parada. IDs e critérios preservados. T9 visível ao cliente. A primeira retomada é só T1; conferir eventual aceite de 27/10 e preservar provas existentes. Não reiniciar cadastros nem reconstruir o app. Dados fictícios e testes técnicos isolados, sem banco do cliente. MarqPonto: credencial cadastrada não é integração ativa; não pedir valor da chave nem antecipar API/SharePoint/rotinas. Prazos anteriores permanecem como histórico, a recombinar com Bruno.

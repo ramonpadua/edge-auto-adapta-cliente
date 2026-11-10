@@ -12,7 +12,7 @@
 ## Atores e permissões
 - RH/Medição (Meire): cadastra operacional, abre competência, mantém lista de colaboradores.
 - Financeiro (Renata): consulta; valida dados contratuais (teto, entidade).
-- CEO/Liderança (Bruno Perrotta): consulta.
+- CEO/Liderança: consulta.
 - Nenhuma alteração de cadastro sem registro de autoria (quem/quando/por quê).
 
 ## Dados
@@ -61,11 +61,12 @@ Cliente, entidade empregadora/faturamento, projeto/comprador, planta (Anchieta, 
 - [ ] Teste humano do RH/Medição registrado
 
 ## Tasks vinculadas
-| Task (fase.md) | Critérios | Leva |
-|---|---|---|
-| Cadastrar clientes, contratos e plantas com regras e tetos configuráveis | CA-1-001/002/003 | 1 |
-| Abrir a competência do mês com lista de colaboradores e bloqueio de liberação | CA-1-004/005 | 2 |
-| Configurar acesso e gestão de contas de usuários (após a task 2) | CA-1-025 (emenda) | 2 |
+
+| ID | Tarefa | Critérios | Dependências |
+|---|---|---|---|
+| 1f8bc7fb-f85a-4ed1-9abc-a9d6dc8afbd5 | Conferir e completar o cadastro de clientes, contratos e plantas | CA-1-001, CA-1-002, CA-1-003 | nenhuma |
+| f924d4f2-d6e4-4685-802f-f44f199dbb30 | Organizar o mês de trabalho e conferir quem pode ser liberado | CA-1-004, CA-1-005 | T1 |
+| 27f82800-9345-4527-bbfd-97a102d07691 | Definir quem pode criar contas e proteger o acesso | CA-1-025 | T1, T2 |
 
 ## Emendas
 - **E-2710-01 (27/10/2026, pedido do consultor Ramon Pádua)**: criação de contas sai do login público e passa para a página de gestão administrativa restrita. Botão "Criar conta" removido do login; criação de contas fica na página administrativa, restrita por controle no servidor (além de ocultar a UI) e com registro de auditoria (quem criou/quando). Contas existentes preservadas sem alteração. Emenda documental: nenhuma implementação de app nesta etapa.
@@ -75,3 +76,10 @@ Cliente, entidade empregadora/faturamento, projeto/comprador, planta (Anchieta, 
 - **Dependência**: a task 9 é inserida na Jornada após a task 2 e só começa com as tasks 1 e 2 concluídas e aceitas (T1 e T2).
 - **Prazo**: a combinar com o Bruno na liberação (não fixado nesta emenda).
 - **Critérios CA-1-001..005 e provas da SPEC permanecem inalterados; CA-1-006 continua pertencendo à SPEC-1-002 (importação de ponto).**
+
+
+## Orientação de execução — revisão de 10/11/2026
+
+Esta revisão não altera critérios, fórmulas, limites ou o resultado contratado. O código do sistema disponível foi lido no commit 5179d0b, v0.0.7; não foi testado no ambiente do cliente. O estado e o teste humano não se presumem por existir código. Ler os roteiros correspondentes em `04_fase-atual/fase.md` (ou `00-Tasks_Gerais.md` no Plano). Reaproveitar a base, conferir a versão atual e corrigir apenas lacunas. Maestro executa; Bruno/time testam e aprovam. Explicar o que existe, o que falta, por que importa e cada clique com resultado esperado; avisar “olha o Skip agora”. Sem jargão nas interações. Não concluir sem evidência e aceite explícito. Uma tarefa por vez dentro da F1 liberada, sem autorização do consultor por tarefa. Testes técnicos em ambiente próprio isolado e dados fictícios; não acessar banco do cliente nem usar produção. Não alterar campos sensíveis, permissões ou valores por suposição.
+
+Na T1, conferir a regressão possível em `src/services/registry.ts`: o cadastro alternativo tenta gravar histórico separadamente e ignora sua falha; `0006_allow_clients_create.js` abre gravação direta. A regra já existente de autoria obrigatória deve continuar verdadeira. O QA v0.0.3 não prova a versão 0.0.7. Sem garantia de histórico, corrigir a lacuna e testar em sandbox antes do teste humano. Não apagar ou desfazer registros existentes para provar o teste. A T9 reaproveita Usuários e mantém a dependência T1+T2; a definição de quem cria contas continua sendo do Bruno (I-11).

@@ -2,7 +2,7 @@
 
 - **Fase**: F1 · **Capacidades**: C3, C4 · **Risco**: obrigatório (API externa, input externo, dado pessoal)
 - **Ambiente**: Skip (GoSkip + SkipCloud) — regra geral do consultor (22/09/2026)
-- **Degrau da solução**: alimenta os dois lados da comparação (ponto × planilha do cliente) com integridade; elimina a transcrição manual de espelhos PDF e previne o maior risco técnico do Módulo 1 — a quebra por semântica divergente (sem parametrização de semelhança automática).
+- **Degrau da solução**: alimenta os dois lados da comparação (ponto × planilha do cliente) com integridade; elimina a transcrição manual de espelhos PDF e previne o maior risco técnico do Módulo 1 — a quebra por semântica divergente (06:03: "não consegue fazer parametrização de semelhança automática").
 
 ## Contexto
 - **Estado atual**: RH consulta colaborador por colaborador no Marque Ponto/MarqPonto, gera espelho PDF e transcreve em planilha; financeiro recebe reportes por e-mail; planilha do cliente chega por e-mail em formato livre.
@@ -55,7 +55,7 @@ Fonte (API/manual/upload), arquivo (hash, data, operador), linhas importadas (co
 - Superfícies: tela/rota de importação de ponto; upload de planilha do cliente; editor de contrato de semântica; relatório de divergência de layout; trilha de importações.
 - Fixtures sintéticos: arquivo de ponto modelo, planilha modelo do cliente, variante divergente, duplicado idêntico.
 - Insumos embutidos na task: I-03 (API do Marque Ponto — Lucas Machado, "API disponível? formato de saída?"), I-07 (cliente piloto + planilha modelo — Navaar/Lucas com o cliente).
-- **Ponto de parada**: se I-03 for negativa, F1 inteira opera no modo manual (previsto no escopo; fornecedor alternativo vira urgente e vai ao consultor). Se I-07 não vier, contrato de semântica fica com o fixture e a comparação real espera. Nunca presumir endpoint, campo ou formato.
+- **Ponto de parada**: se I-03 for negativa, F1 inteira opera no modo manual (previsto no escopo; §10.4 vira urgente e vai ao consultor). Se I-07 não vier, contrato de semântica fica com o fixture e a comparação real espera. Nunca presumir endpoint, campo ou formato.
 
 ## Checklist de aceite
 - [ ] CA-1-006..011 provados em fixture
@@ -64,10 +64,18 @@ Fonte (API/manual/upload), arquivo (hash, data, operador), linhas importadas (co
 - [ ] Teste humano do RH/Medição registrado
 
 ## Tasks vinculadas
-| Task (fase.md) | Critérios | Leva |
-|---|---|---|
-| Importar os dados de ponto com registro de origem e sem duplicidade | CA-1-006/008/009/011 | 3 |
-| Receber a planilha do cliente validada pelo contrato de semântica | CA-1-007/010 | 3 |
+
+| ID | Tarefa | Critérios | Dependências |
+|---|---|---|---|
+| 85b69fe3-d278-41e3-b8cb-24177bc4d3e1 | Trazer os dados de ponto sem repetir registros | CA-1-006, CA-1-008, CA-1-009, CA-1-011 | T1 |
+| cb389d03-1401-491f-82f6-e4ecd4dc9edf | Receber a planilha do cliente e avisar quando estiver fora do modelo | CA-1-007, CA-1-010 | T1 |
 
 ## Emendas
 (nenhuma)
+
+
+## Orientação de execução — revisão de 10/11/2026
+
+Esta revisão não altera critérios, fórmulas, limites ou o resultado contratado. O código do sistema disponível foi lido no commit 5179d0b, v0.0.7; não foi testado no ambiente do cliente. O estado e o teste humano não se presumem por existir código. Ler os roteiros correspondentes em `04_fase-atual/fase.md` (ou `00-Tasks_Gerais.md` no Plano). Reaproveitar a base, conferir a versão atual e corrigir apenas lacunas. Maestro executa; Bruno/time testam e aprovam. Explicar o que existe, o que falta, por que importa e cada clique com resultado esperado; avisar “olha o Skip agora”. Sem jargão nas interações. Não concluir sem evidência e aceite explícito. Uma tarefa por vez dentro da F1 liberada, sem autorização do consultor por tarefa. Testes técnicos em ambiente próprio isolado e dados fictícios; não acessar banco do cliente nem usar produção. Não alterar campos sensíveis, permissões ou valores por suposição.
+
+Credencial MarqPonto informada como cadastrada em 03/11 não prova conexão. Não cobrar novamente seu valor. Confirmar apenas nome exato/ambiente e viabilidade documentada quando necessário; sem conexão provada, manter o caminho manual previsto e seu rótulo fiel. Gatilho manual de API e eventual antecipação da integração não estão aprovados por esta revisão editorial; não inventar endpoint nem ativar rotina. SharePoint não é integração assumida.

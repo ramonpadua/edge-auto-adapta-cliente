@@ -1,8 +1,3 @@
-# 04_fase-atual — Fase 1 (Módulo 1: Extração e Conciliação)
+# Fase 1 — orientações de execução
 
-- `fase.md` — tabela operacional das tasks da fase (ID, task, dono, prazo, SPEC, critério, aceite, prova, status, evidência). É a fonte canônica de status.
-- `specs/` — as 4 SPECs da fase, cada uma com contexto, regras, critérios de aceite binários (CA-1-001..024; a emenda 27/10 acrescenta CA-1-025 na SPEC-1-001), TDD (RED/GREEN/REGRESSÃO) e os insumos embutidos nas tasks.
-
-Ordem de execução (levas): 1 cadastro · 2 competência · T9 gestão de contas/criação de usuários (emenda 27/10; leva 2, depois da task 2) · 3 importação de ponto ∥ planilha do cliente · 4 conciliação · 5 ajustes/divergências ∥ cálculo · 6 relatório comparativo + baseline.
-
-Regra: uma task por vez; `[x]` só depois das provas e do teste humano; insumo faltante vira pergunta na task, nunca bloqueio.
+Leia fase.md para as nove tarefas, com o que existe, o que falta, motivo e teste humano em passos. As quatro SPECs mantêm os critérios originais. Maestro executa; Bruno/time testam e aprovam. F1 liberada; uma tarefa por vez, começando por conferir a versão atual da T1. Não reconstruir o sistema. T8 exige T6+T7, T9 exige T1+T2. Nenhum novo aceite presumido.

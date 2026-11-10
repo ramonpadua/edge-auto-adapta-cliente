@@ -14,3 +14,8 @@
 
 ## 2026-09-17
 - Kickoff Adapta Native (Bruno/CEO, Renata/Financeiro, Meire/RH, Alexandra/Vendas). Ciclo 1 definido: conciliação de ponto + régua de cobrança.
+
+
+## Revisão de tarefas 10/11/2026 — código atual e linguagem simples
+
+9 tarefas ajustadas ao código 5179d0b v0.0.7; IDs/CA/dependências e aceites anteriores preservados. Dono Maestro, teste e aceite Bruno/time. T1 confere regressão de histórico opcional antes do aceite humano; T8 depende T6+T7. Orientações em passos com resultado esperado. T9 visível, UUID real preservado. Nenhuma tarefa concluída, nenhum banco ou app alterado. F1 continua liberada.

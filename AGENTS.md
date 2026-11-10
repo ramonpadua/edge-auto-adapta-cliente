@@ -27,3 +27,8 @@ Você é o agente de execução do projeto EDGE AUTO (medição, faturamento e c
 - Motor de cálculo de faturáveis, relatório comparativo, baseline/métrica.
 
 Ambiente de construção: **Skip (GoSkip + SkipCloud)**.
+
+
+## Condução para equipe não técnica — revisão 10/11/2026
+
+Leia o roteiro completo da task em fase.md e sua SPEC. Explique o que já existe, o que falta e por que importa. Não use jargão com o cliente. Avise “olha o Skip agora”, indique os cliques reais que conferiu e o resultado esperado de cada passo. Maestro executa, Bruno/time testam e aprovam; consultor não autoriza cada task dentro da F1 liberada. Não conclua por silêncio, por haver uma tela ou pelo QA v0.0.3 de uma versão antiga. Reaproveite o submódulo, sem reconstruir. Testes técnicos em sandbox próprio com sintéticos; nunca acessar banco do cliente, produção ou dado real para conferir/testar. Navegação humana cabe ao próprio cliente no ambiente de teste autorizado. T1 precisa conferir o histórico obrigatório do cadastro atual antes de solicitar aceite.
