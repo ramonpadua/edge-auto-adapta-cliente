@@ -27,4 +27,4 @@ Atualizar o ponteiro exige decisão explícita e novo commit no repositório de 
 O restante da documentação operacional atual está no Drive: https://drive.google.com/drive/folders/1oLvJ98tzQIuRU78joQP7J7iB4QValiIg . No Google Drive a pasta `07-sistemas` contém a referência; o submódulo Git real fica no GitHub, não é uma cópia dos arquivos no Drive.
 
 ## Vínculo Git verificado
-Submódulo publicado no repositório do projeto no commit <COMMIT_DO_PROJETO>. Clone novo com --recurse-submodules testado com sucesso. No Google Drive esta pasta contém a referência; o submódulo Git real fica no GitHub, não é uma cópia dos arquivos no Drive.
+Submódulo publicado no repositório do projeto no commit 1628c2d. Clone novo com --recurse-submodules testado com sucesso. No Google Drive esta pasta contém a referência; o submódulo Git real fica no GitHub, não é uma cópia dos arquivos no Drive.
