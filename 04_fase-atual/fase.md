@@ -16,4 +16,4 @@
 | 630704b0-7141-45e2-9462-84d0737946dd | Calcular horas faturáveis com regra por cliente e fail-closed de teto | @Bruno | 11/10/2026 | SPEC-1-004 | CA-1-018, CA-1-019, CA-1-022, CA-1-023, CA-1-024 | Sem teto = “em conferência”; dado real recusado | 2 regras distintas + teto vazio/preenchido | Pendente (T5) | — |
 | 01e77682-eb47-41a0-ad2a-0a589c5abec0 | Emitir o relatório comparativo e registrar o baseline da medição | @Bruno | 12/10/2026 | SPEC-1-004 | CA-1-020, CA-1-021 | Relatório exportável; protocolo de medição registrado | 1ª competência do piloto (fixture) | Pendente (T7) | — |
 
-**Cobertura**: CA-1-001..024 = 24/24 + CA-1-025 (emenda 27/10). **Levas**: 1: T1 · 2: T2 · T9 (emenda 27/10, após T2) · 3: T3 ∥ T4 · 4: T5 · 5: T6 ∥ T7 · 6: T8. **Task ativa**: task 1, aguardando teste humano.
+**Cobertura**: CA-1-001..024 = 24/24 + CA-1-025 (emenda 27/10). **Levas**: 1: T1 · 2: T2 · T9 (emenda 27/10, após T2) · 3: T3 ∥ T4 · 4: T5 · 5: T6 ∥ T7 · 6: T8. **Task ativa**: task 1, aguardando teste humano — execução da F1 liberada em 10/11 pelo consultor Ramon Pádua.
